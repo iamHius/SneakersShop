@@ -16,6 +16,7 @@ namespace SneakersShop.Models
         [Required]
         [Column(TypeName= "decimal(8,3)")]
         public decimal ProductPirce { get; set; }
+        public string? ProductPhoto { get; set; }
         public bool BestSeller { get; set; }
 
         [ForeignKey("Category")]

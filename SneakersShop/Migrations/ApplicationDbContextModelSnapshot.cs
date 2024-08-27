@@ -343,6 +343,9 @@ namespace SneakersShop.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("ProductPhoto")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("ProductPirce")
                         .HasColumnType("decimal(8,3)");
 
