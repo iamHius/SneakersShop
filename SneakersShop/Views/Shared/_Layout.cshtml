@@ -2,12 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <title>@ViewData["Title"] - SneakersShop</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SneakersShop.styles.css" asp-append-version="true" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+	<!--Css Template-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/template/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/template/css/icomoon.css">
+	<!-- Ion Icon Fonts-->
+	<link rel="stylesheet" href="/template/css/ionicons.min.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/template/css/bootstrap.min.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="/template/css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/template/css/flexslider.css">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="/template/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/template/css/owl.theme.default.min.css">
+
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="/template/css/bootstrap-datepicker.css">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="/template/fonts/flaticon/font/flaticon.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/template/css/style.css">
 </head>
 <body>
     <header>
@@ -15,7 +47,11 @@
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SneakersShop</a>
                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Shop</a>
+				<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Category</a>
+				<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="icon-shopping-cart"></i> [0]</a>
+				
+				<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -36,8 +72,37 @@
     </header>
 
 
-    <div class="container">
+    <div>
         <main role="main" class="pb-3">
+        @await Component.InvokeAsync("HeroSection")
+		@await Component.InvokeAsync("GenderSection")
+		@await Component.InvokeAsync("BestSeller")
+		@* <div class="colorlib-partner">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
+						<h2>Trusted Partners</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col partner-col text-center">
+							<img src="/template/images/brand-1.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+							<img src="/template/images/brand-2.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+							<img src="/template/images/brand-3.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+							<img src="/template/images/brand-4.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+							<img src="/template/images/brand-5.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+				</div>
+			</div>
+		</div> *@
             @RenderBody()
         </main>
     </div>
@@ -53,6 +118,30 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+	<!-- jQuery -->
+	<script src="/template/js/jquery.min.js"></script>
+	<!-- popper -->
+	<script src="/template/js/popper.min.js"></script>
+	<!-- bootstrap 4.1 -->
+	<script src="/template/js/bootstrap.min.js"></script>
+	<!-- jQuery easing -->
+	<script src="/template/js/jquery.easing.1.3.js"></script>
+	<!-- Waypoints -->
+	<script src="/template/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="/template/js/jquery.flexslider-min.js"></script>
+	<!-- Owl carousel -->
+	<script src="/template/js/owl.carousel.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="/template/js/jquery.magnific-popup.min.js"></script>
+	<script src="/template/js/magnific-popup-options.js"></script>
+	<!-- Date Picker -->
+	<script src="/template/js/bootstrap-datepicker.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="/template/js/jquery.stellar.min.js"></script>
+	<!-- Main -->
+	<script src="/template/js/main.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
