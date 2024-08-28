@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<SneakersShop.Models.Size>
-
+@using SneakersShop.Models.ViewModels
 <div class="col-sm-12">
 	<div class="side border mb-1">
 		<h3>Size</h3>
@@ -7,7 +7,7 @@
 			@foreach(var item in Model)
 			{
 				<ul>
-					<li><a href="#">@item.SizeName</a></li>
+					<li><a href="/Products/ProductsBySize/?sizeId=@item.SizeId">@item.SizeName</a></li>
 				</ul>
 			}
 		</div>

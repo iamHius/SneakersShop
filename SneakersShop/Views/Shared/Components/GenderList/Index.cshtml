@@ -1,11 +1,12 @@
 ﻿@model IEnumerable<SneakersShop.Models.Gender>
+@using SneakersShop.Models.ViewModels
 <div class="col-sm-12">
 	<div class="side border mb-1">
 		<h3>Gender</h3>
 		@foreach(var item in Model)
 		{
 			<ul>
-				<li><a href="#">@item.GenderName</a></li>
+				<li><a href="/Products/ProductsByGender/?genderId=@item.GenderId">@item.GenderName</a></li>
 			</ul>
 		}
 	</div>

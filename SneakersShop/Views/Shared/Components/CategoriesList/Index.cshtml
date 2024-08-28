@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<SneakersShop.Models.Category>
-
+@using SneakersShop.Models.ViewModels
 <div class="col-sm-12">
 	<div class="side border mb-1">
 		<h3>Categories</h3>
 		@foreach(var item in Model)
 		{
 			<ul>
-				<li><a href="#">@item.CategoryName</a></li>
+				<li><a href="/Products/ProductsByCat/?categoryId=@item.CategoryId">@item.CategoryName</a></li>
 			</ul>
 		}
 	</div>

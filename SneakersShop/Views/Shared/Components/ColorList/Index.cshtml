@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<SneakersShop.Models.Color>
-
+@using SneakersShop.Models.ViewModels
 <div class="col-sm-12">
 	<div class="side border mb-1">
 		<h3>Colors</h3>
 		@foreach(var item in Model)
 		{
 			<ul>
-				<li><a href="#">@item.ColorName</a></li>
+				<li><a href="/Products/ProductsByColor/?colorId=@item.ColorId">@item.ColorName</a></li>
 			</ul>
 		}
 	</div>

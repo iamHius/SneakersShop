@@ -14,7 +14,7 @@ namespace SneakersShop.Components
 		public IViewComponentResult Invoke()
 
 		{  
-			return View("Index"); 
+			return View("Index", _context.Genders.ToList()); 
 		}
 
 	}
