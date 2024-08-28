@@ -5,86 +5,70 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="breadcrumbs-two">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="breadcrumbs-img" style="background-image: url(/template/images/cover-img-1.jpg);">
+					<h2>Our Products</h2>
+				</div>
+				<div class="menu text-center">
+					<p><a href="#">Men's'</a> <a href="#">Woman's'</a> <a href="#">Best Seller</a> <a href="#">More</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductPirce)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductPhoto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BestSeller)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Brand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Color)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Size)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductPirce)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductPhoto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BestSeller)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brand.BrandName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Color.ColorName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender.GenderName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Size.SizeName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="colorlib-product">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-xl-3">
+				<div class="row">
+					@await Component.InvokeAsync("BrandList")
+					@await Component.InvokeAsync("SizeList")
+					@await Component.InvokeAsync("CategoriesList")
+					@await Component.InvokeAsync("ColorList")
+					@await Component.InvokeAsync("GenderList")
+				</div>
+			</div>
+			<div class="col-lg-9 col-xl-9">
+				<div class="row row-pb-md">
+					@foreach(var item in Model)
+					{
+						<div class="col-lg-4 mb-4 text-center">
+							<div class="product-entry border">
+								<a href="/Products/Details/@item.ProductId" class="prod-img">
+									<img src="@item.ProductPhoto" class="img-fluid" alt="">
+								</a>
+								<div class="desc">
+									<h2><a href="#">@item.ProductName</a></h2>
+									<span class="price">@item.ProductPirce</span>
+								</div>
+							</div>
+						</div>
+					}
+					<div class="w-100"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="block-27">
+							<ul>
+								<li><a href="#"><i class="ion-ios-arrow-back"></i></a></li>
+								<li class="active"><span>1</span></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#"><i class="ion-ios-arrow-forward"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@await Component.InvokeAsync("BrandSection")

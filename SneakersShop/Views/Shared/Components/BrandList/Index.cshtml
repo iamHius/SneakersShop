@@ -1,0 +1,15 @@
+﻿@model IEnumerable<SneakersShop.Models.Brand>
+
+
+	<div class="col-sm-12">
+		<div class="side border mb-1">
+			<h3>Brand</h3>
+			@foreach (var item in Model)
+			{
+				<ul>
+					<li><a href="#">@item.BrandName</a></li>
+				</ul>
+			}
+		</div>
+	</div>
+

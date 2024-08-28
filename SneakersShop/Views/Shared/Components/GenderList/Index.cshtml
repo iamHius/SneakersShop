@@ -1,0 +1,12 @@
+﻿@model IEnumerable<SneakersShop.Models.Gender>
+<div class="col-sm-12">
+	<div class="side border mb-1">
+		<h3>Gender</h3>
+		@foreach(var item in Model)
+		{
+			<ul>
+				<li><a href="#">@item.GenderName</a></li>
+			</ul>
+		}
+	</div>
+</div>

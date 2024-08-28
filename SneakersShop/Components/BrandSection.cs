@@ -3,19 +3,16 @@ using SneakersShop.Areas.Identity.Data;
 
 namespace SneakersShop.Components
 {
-	public class GenderSection : ViewComponent
+	public class BrandSection : ViewComponent
 	{
 		private readonly ApplicationDbContext _context;
-		public GenderSection(ApplicationDbContext context)
+		public BrandSection(ApplicationDbContext context)
 		{
 			_context = context;
 		}
-
 		public IViewComponentResult Invoke()
-
-		{  
-			return View("Index"); 
+		{
+			return View("Index",_context.Brands.ToList());
 		}
-
 	}
 }
